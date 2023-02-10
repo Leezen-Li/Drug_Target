@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="/favicon.ico">
+    <script src="js/qwebchannel.js"></script>
+    <title>app</title>
+    <style>* {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        background-color: #252954;
+        color: #9b9ca7;
+    }</style>
+    <script defer="defer" src="js/chunk-vendors.d085a3d3.js"></script>
+    <script defer="defer" src="js/app.fe3201f2.js"></script>
+    <link href="css/chunk-vendors.07c8d318.css" rel="stylesheet">
+    <link href="css/app.dd302520.css" rel="stylesheet">
+</head>
+<body>
+
+<button>
+    <button onclick="getFile()">点我</button>
+</button>
+
+<form action="/servlet/Account" method=""></form>
+<noscript><strong>We're sorry but app doesn't work properly without JavaScript enabled. Please enable it to
+    continue.</strong></noscript>
+<div id="app"></div>
+</body>
+
+<script>
+<!--  提前存储好对象  -->
+    document.addEventListener("DOMContentLoaded", function () {
+        new QWebChannel(qt.webChannelTransport, function (channel) {
+            window.pyqt5 = channel.objects;
+        });
+    });
+
+    function getFile() {
+        // alert( window.pyqt5.train.get_train = 1)
+        // window.pyqt5.train.get_train
+        window.pyqt5.train.model_train = JSON.stringify({
+      model_name:"测试测试",
+      model_type:0,
+
+      isNondimensionalize:true,
+      nondimensionalizeType:0,
+      feature_range:[0,1],
+
+      isDimensionReduction:true,
+      dimensionReductionType:0,
+      pca_components:0.90,
+      threshold:0,
+
+      estimatorType:0,
+      n_neighbors:[1,2,3,4,5],
+      alpha:1,
+
+      criterion:"gini",
+      max_depth:null,
+      random:null,
+
+      n_estimators:[9,10,11,12,13,14,15],
+
+      forest_criteria:"gini",
+      forest_max_depth:null,
+      forest_bootstrap:true,
+
+
+    })
+    }
+</script>
+
+</html>
